@@ -1,24 +1,4 @@
-url: https://liu-chao.site/LBDiscoverAnalysis/
+url: http://liu-chao.site/LBDiscoverAnalysis/
 template:
   bootstrap: 5
 
-navbar:
-  structure:
-    left: [intro, reference, articles]
-    right: [search, github]
-  components:
-    intro:
-      text: Home
-      href: index.html
-    reference:
-      text: Reference
-      href: reference/index.html
-    articles:
-      text: Articles
-      menu:
-      - text: Migraine Workflow
-        href: articles/migraine_example.html
-    github:
-      icon: fab fa-github
-      aria-label: GitHub repository
-      href: https://github.com/chaoliu-cl/LBDiscover

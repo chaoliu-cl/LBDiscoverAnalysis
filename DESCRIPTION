@@ -12,7 +12,7 @@ Description: Analysis-focused components for literature-based discovery in
     on 'LBDiscoverData' for article retrieval, preprocessing, and entity
     extraction.
 License: GPL-3
-URL: https://github.com/chaoliu-cl/LBDiscover, https://liu-chao.site/LBDiscoverAnalysis/
+URL: https://github.com/chaoliu-cl/LBDiscover, https://liu-chao.site/LBDiscoverAnalysis/, http://liu-chao.site/LBDiscoverAnalysis/
 BugReports: https://github.com/chaoliu-cl/LBDiscover/issues
 Encoding: UTF-8
 LazyData: true
