@@ -12,5 +12,5 @@ This package focuses on:
 3. Validation and evidence checking
 4. Visualization and reporting
 
-`LBDiscoverAnalysis` depends on `LBDiscoverData` for article retrieval,
+`LBDiscoverAnalysis` depends on `LBDiscover` for article retrieval,
 preprocessing, dictionary lookup, and entity extraction.

@@ -26,7 +26,7 @@ This article mirrors the package example script at:
 - `inst/examples/migraine_example.R`
 
 ```{r setup}
-library(LBDiscoverData)
+library(LBDiscover)
 library(LBDiscoverAnalysis)
 ```
 

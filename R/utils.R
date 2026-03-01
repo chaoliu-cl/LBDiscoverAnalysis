@@ -1200,7 +1200,7 @@ eval_evidence <- function(results, max_results = 5, base_term = NULL,
 
     # Search for direct connections
     direct_query <- paste0(base_term, " AND ", c_term)
-    direct_results <- LBDiscoverData::pubmed_search(direct_query, max_results = max_articles)
+    direct_results <- LBDiscover::pubmed_search(direct_query, max_results = max_articles)
 
     # Store results for this evaluation
     eval_item <- list(
@@ -1230,7 +1230,7 @@ eval_evidence <- function(results, max_results = 5, base_term = NULL,
     # If no direct evidence, check for B term connection
     if (nrow(direct_results) == 0) {
       b_query <- paste0(b_term, " AND ", c_term)
-      b_results <- LBDiscoverData::pubmed_search(b_query, max_results = max_articles)
+      b_results <- LBDiscover::pubmed_search(b_query, max_results = max_articles)
 
       # Add B term connection evidence
       eval_item$b_term_evidence <- list(

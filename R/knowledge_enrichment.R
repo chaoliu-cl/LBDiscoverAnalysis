@@ -35,9 +35,9 @@ enhance_abc_kb <- function(abc_results, knowledge_base = c("umls", "mesh"),
     term <- unique_terms[i]
 
     if (knowledge_base == "umls") {
-      term_info[[term]] <- LBDiscoverData::query_umls(term, api_key = api_key)
+      term_info[[term]] <- LBDiscover::query_umls(term, api_key = api_key)
     } else if (knowledge_base == "mesh") {
-      term_info[[term]] <- LBDiscoverData::query_mesh(term)
+      term_info[[term]] <- LBDiscover::query_mesh(term)
     }
 
     utils::setTxtProgressBar(pb, i)
