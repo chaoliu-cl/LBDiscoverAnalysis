@@ -1,0 +1,78 @@
+# Perform comprehensive literature-based discovery without type constraints
+
+This function performs a comprehensive literature-based discovery
+analysis using multiple approaches without enforcing entity type
+constraints.
+
+## Usage
+
+``` r
+run_lbd(
+  search_query,
+  a_term,
+  max_results = 100,
+  discovery_approaches = c("abc", "anc", "lsi", "bitola"),
+  include_visualizations = TRUE,
+  output_file = "discovery_report.html",
+  api_key = NULL,
+  dictionary_sources = c("local", "mesh", "umls"),
+  entity_categories = c("disease", "drug", "gene")
+)
+```
+
+## Arguments
+
+- search_query:
+
+  Character string, the search query for retrieving initial articles.
+
+- a_term:
+
+  Character string, the source term (A) for discovery.
+
+- max_results:
+
+  Maximum number of results to return for each approach.
+
+- discovery_approaches:
+
+  Character vector, the discovery approaches to use.
+
+- include_visualizations:
+
+  Logical. If TRUE, generates visualizations.
+
+- output_file:
+
+  File path for the output report.
+
+- api_key:
+
+  Character string. API key for PubMed and other services.
+
+- dictionary_sources:
+
+  Character vector. Sources for entity dictionaries: "local", "mesh",
+  "umls".
+
+- entity_categories:
+
+  Character vector. Entity categories to include.
+
+## Value
+
+A list containing discovery results from all approaches.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+discovery_results <- run_lbd(
+  search_query = "migraine headache",
+  a_term = "migraine",
+  discovery_approaches = c("abc", "anc", "lsi"),
+  dictionary_sources = c("mesh"),
+  entity_categories = c("disease", "drug", "gene", "protein")
+)
+} # }
+```
