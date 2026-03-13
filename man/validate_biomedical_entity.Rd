@@ -17,3 +17,8 @@ Logical indicating if the term is validated
 \description{
 Validate biomedical entities using BioBERT or other ML models
 }
+\examples{
+\dontrun{
+LBDiscoverAnalysis:::validate_biomedical_entity("sumatriptan", "drug")
+}
+}

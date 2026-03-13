@@ -1,5 +1,8 @@
 ^LBDiscover\.Rproj$
+^LBDiscoverAnalysis\.Rproj$
 ^\.Rproj\.user$
+^CONTRIBUTING\.md$
+^\.covrignore$
 ^migraine_chord\.html$
 ^migraine_discoveries\.html$
 ^migraine_heatmap\.png$

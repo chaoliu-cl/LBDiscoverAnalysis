@@ -28,3 +28,17 @@ This function generates an HTML report summarizing discovery results
 without enforcing entity type constraints. It includes data validation
 to avoid errors with publication years and other data issues.
 }
+\examples{
+results <- list(
+  abc = data.frame(
+    a_term = "migraine",
+    b_term = "serotonin",
+    c_term = "cgrp",
+    abc_score = 0.42,
+    stringsAsFactors = FALSE
+  )
+)
+out_file <- tempfile(fileext = ".html")
+create_report(results, output_file = out_file)
+file.exists(out_file)
+}

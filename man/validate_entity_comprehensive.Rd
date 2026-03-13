@@ -29,3 +29,13 @@ Logical indicating if the term is validated
 \description{
 Comprehensive entity validation using multiple techniques
 }
+\examples{
+\dontrun{
+LBDiscoverAnalysis:::validate_entity_comprehensive(
+  "migraine",
+  "disease",
+  use_nlp = FALSE,
+  use_external_api = FALSE
+)
+}
+}

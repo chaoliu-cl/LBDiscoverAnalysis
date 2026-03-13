@@ -19,3 +19,8 @@ Logical indicating if the term is likely of the claimed type
 \description{
 Validate entity types using NLP-based entity recognition with improved accuracy
 }
+\examples{
+\dontrun{
+LBDiscoverAnalysis:::validate_entity_with_nlp("EGFR receptor", "protein")
+}
+}

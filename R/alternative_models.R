@@ -15,6 +15,33 @@
 #'
 #' @return A data frame with ranked discovery results.
 #' @export
+#'
+#' @examples
+#' terms <- c("migraine", "serotonin", "cgrp", "sumatriptan")
+#' co_matrix <- matrix(
+#'   c(
+#'     0.0, 0.8, 0.7, 0.5,
+#'     0.8, 0.0, 0.6, 0.3,
+#'     0.7, 0.6, 0.0, 0.4,
+#'     0.5, 0.3, 0.4, 0.0
+#'   ),
+#'   nrow = 4,
+#'   byrow = TRUE,
+#'   dimnames = list(terms, terms)
+#' )
+#' attr(co_matrix, "entity_types") <- c(
+#'   migraine = "disease",
+#'   serotonin = "chemical",
+#'   cgrp = "protein",
+#'   sumatriptan = "drug"
+#' )
+#' anc_model(
+#'   co_matrix,
+#'   a_term = "migraine",
+#'   n_b_terms = 2,
+#'   min_score = 0.2,
+#'   validation_function = function(term, claimed_type) TRUE
+#' )
 anc_model <- function(co_matrix, a_term, n_b_terms = 3,
                       c_type = NULL, min_score = 0.1, n_results = 100,
                       enforce_biomedical_terms = TRUE,
@@ -48,7 +75,7 @@ anc_model <- function(co_matrix, a_term, n_b_terms = 3,
     b_terms <- b_terms[!tolower(b_terms) %in% static_data$blacklisted_terms]
 
     # Filter B terms by entity type if available and types specified
-    if (has_entity_types && !is.null(b_term_types)) {
+    if (has_entity_types && !is.null(b_term_types) && length(b_terms) > 0) {
       b_term_type_filter <- function(term) {
         if (term %in% names(entity_types)) {
           return(entity_types[term] %in% b_term_types)
@@ -56,7 +83,7 @@ anc_model <- function(co_matrix, a_term, n_b_terms = 3,
         return(FALSE)
       }
 
-      b_terms <- b_terms[sapply(b_terms, b_term_type_filter)]
+      b_terms <- b_terms[vapply(b_terms, b_term_type_filter, logical(1))]
     }
 
     # Additional biomedical entity validation using provided function
@@ -415,6 +442,29 @@ bitola_model <- function(co_matrix, a_term, a_semantic_type = NULL,
 #'
 #' @return A data frame with ranked discovery results.
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' tdm <- matrix(
+#'   c(
+#'     3, 1, 0, 2,
+#'     1, 2, 1, 0,
+#'     0, 1, 3, 2,
+#'     2, 0, 1, 3
+#'   ),
+#'   nrow = 4,
+#'   byrow = TRUE
+#' )
+#' rownames(tdm) <- c("migraine", "serotonin", "cgrp", "sumatriptan")
+#' lsi_model(
+#'   tdm,
+#'   a_term = "migraine",
+#'   n_factors = 2,
+#'   n_results = 3,
+#'   validation_function = function(term, claimed_type) TRUE,
+#'   use_nlp = FALSE
+#' )
+#' }
 lsi_model <- function(term_doc_matrix, a_term, n_factors = 100, n_results = 100,
                       enforce_biomedical_terms = TRUE,
                       c_term_types = NULL,

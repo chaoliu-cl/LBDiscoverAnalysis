@@ -19,3 +19,14 @@ A data frame with enhanced ABC results.
 \description{
 This function enhances ABC results with information from external knowledge bases.
 }
+\examples{
+\dontrun{
+abc_results <- data.frame(
+  a_term = "migraine",
+  b_terms = "serotonin, cgrp",
+  c_term = "sumatriptan",
+  stringsAsFactors = FALSE
+)
+enhance_abc_kb(abc_results, knowledge_base = "mesh")
+}
+}

@@ -8,6 +8,17 @@
 #'
 #' @return A data frame with enhanced ABC results.
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' abc_results <- data.frame(
+#'   a_term = "migraine",
+#'   b_terms = "serotonin, cgrp",
+#'   c_term = "sumatriptan",
+#'   stringsAsFactors = FALSE
+#' )
+#' enhance_abc_kb(abc_results, knowledge_base = "mesh")
+#' }
 enhance_abc_kb <- function(abc_results, knowledge_base = c("umls", "mesh"),
                            api_key = NULL) {
 
@@ -35,9 +46,9 @@ enhance_abc_kb <- function(abc_results, knowledge_base = c("umls", "mesh"),
     term <- unique_terms[i]
 
     if (knowledge_base == "umls") {
-      term_info[[term]] <- LBDiscover::query_umls(term, api_key = api_key)
+      term_info[[term]] <- .lbdiscover_call("query_umls", term, api_key = api_key)
     } else if (knowledge_base == "mesh") {
-      term_info[[term]] <- LBDiscover::query_mesh(term)
+      term_info[[term]] <- .lbdiscover_call("query_mesh", term)
     }
 
     utils::setTxtProgressBar(pb, i)

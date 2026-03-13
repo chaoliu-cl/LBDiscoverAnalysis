@@ -43,3 +43,30 @@ A data frame with ranked discovery results.
 This function implements an improved ANC model that ensures only biomedical
 terms are used as intermediaries.
 }
+\examples{
+terms <- c("migraine", "serotonin", "cgrp", "sumatriptan")
+co_matrix <- matrix(
+  c(
+    0.0, 0.8, 0.7, 0.5,
+    0.8, 0.0, 0.6, 0.3,
+    0.7, 0.6, 0.0, 0.4,
+    0.5, 0.3, 0.4, 0.0
+  ),
+  nrow = 4,
+  byrow = TRUE,
+  dimnames = list(terms, terms)
+)
+attr(co_matrix, "entity_types") <- c(
+  migraine = "disease",
+  serotonin = "chemical",
+  cgrp = "protein",
+  sumatriptan = "drug"
+)
+anc_model(
+  co_matrix,
+  a_term = "migraine",
+  n_b_terms = 2,
+  min_score = 0.2,
+  validation_function = function(term, claimed_type) TRUE
+)
+}

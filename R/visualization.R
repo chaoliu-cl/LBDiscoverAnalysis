@@ -1418,6 +1418,20 @@ export_chord <- function(abc_results, output_file = "abc_chord.html",
 #'
 #' @return The file path of the created HTML report (invisibly).
 #' @export
+#'
+#' @examples
+#' results <- list(
+#'   abc = data.frame(
+#'     a_term = "migraine",
+#'     b_term = "serotonin",
+#'     c_term = "cgrp",
+#'     abc_score = 0.42,
+#'     stringsAsFactors = FALSE
+#'   )
+#' )
+#' out_file <- tempfile(fileext = ".html")
+#' create_report(results, output_file = out_file)
+#' file.exists(out_file)
 create_report <- function(results, visualizations = NULL, articles = NULL,
                           output_file = "discovery_report.html") {
 

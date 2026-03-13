@@ -2161,6 +2161,11 @@ filter_by_type <- function(co_matrix, types) {
 #' @param claimed_type Character string, the claimed entity type
 #' @param nlp_model The loaded NLP model to use for validation
 #' @return Logical indicating if the term is likely of the claimed type
+#'
+#' @examples
+#' \dontrun{
+#' LBDiscoverAnalysis:::validate_entity_with_nlp("EGFR receptor", "protein")
+#' }
 validate_entity_with_nlp <- function(term, claimed_type, nlp_model = NULL) {
   # Load required packages
   if (!requireNamespace("spacyr", quietly = TRUE)) {
@@ -2424,6 +2429,11 @@ validate_entity_with_nlp <- function(term, claimed_type, nlp_model = NULL) {
 #' @param term Character string, the term to validate
 #' @param claimed_type Character string, the claimed entity type
 #' @return Logical indicating if the term is validated
+#'
+#' @examples
+#' \dontrun{
+#' LBDiscoverAnalysis:::validate_biomedical_entity("sumatriptan", "drug")
+#' }
 validate_biomedical_entity <- function(term, claimed_type) {
   # If reticulate and Python environment are available
   if (!requireNamespace("reticulate", quietly = TRUE)) {
@@ -2570,6 +2580,16 @@ validate_biomedical_entity <- function(term, claimed_type) {
 #' @param use_pattern Logical, whether to use pattern-based validation
 #' @param use_external_api Logical, whether to query external APIs
 #' @return Logical indicating if the term is validated
+#'
+#' @examples
+#' \dontrun{
+#' LBDiscoverAnalysis:::validate_entity_comprehensive(
+#'   "migraine",
+#'   "disease",
+#'   use_nlp = FALSE,
+#'   use_external_api = FALSE
+#' )
+#' }
 validate_entity_comprehensive <- function(term, claimed_type,
                                           use_nlp = TRUE,
                                           use_pattern = TRUE,
@@ -2660,6 +2680,11 @@ validate_entity_comprehensive <- function(term, claimed_type,
 #' @param term Character string, the term to validate
 #' @param claimed_type Character string, the claimed entity type
 #' @return Logical indicating if the term was found in the appropriate database
+#'
+#' @examples
+#' \dontrun{
+#' LBDiscoverAnalysis:::query_external_api("sumatriptan", "drug")
+#' }
 query_external_api <- function(term, claimed_type) {
   # Define API endpoints based on entity type
   api_endpoints <- list(

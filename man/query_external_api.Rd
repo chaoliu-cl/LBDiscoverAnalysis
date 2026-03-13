@@ -17,3 +17,8 @@ Logical indicating if the term was found in the appropriate database
 \description{
 Query external biomedical APIs to validate entity types
 }
+\examples{
+\dontrun{
+LBDiscoverAnalysis:::query_external_api("sumatriptan", "drug")
+}
+}

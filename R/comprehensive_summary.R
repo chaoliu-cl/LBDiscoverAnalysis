@@ -55,7 +55,7 @@ run_lbd <- function(search_query, a_term,
 
   # Step 1: Retrieve articles from PubMed
   message("Step 1: Retrieving articles from PubMed...")
-  articles <- LBDiscover::pubmed_search(search_query, max_results = 1000, api_key = api_key)
+  articles <- .lbdiscover_call("pubmed_search", search_query, max_results = 1000, api_key = api_key)
 
   if (nrow(articles) == 0) {
     stop("No articles found for the search query: ", search_query)
@@ -65,7 +65,8 @@ run_lbd <- function(search_query, a_term,
 
   # Step 2: Preprocess text
   message("Step 2: Preprocessing article text...")
-  preprocessed_data <- LBDiscover::vec_preprocess(
+  preprocessed_data <- .lbdiscover_call(
+    "vec_preprocess",
     articles,
     text_column = "abstract",
     remove_stopwords = TRUE
@@ -86,7 +87,8 @@ run_lbd <- function(search_query, a_term,
 
       # Try to load dictionary
       dict <- tryCatch({
-        LBDiscover::load_dictionary(
+        .lbdiscover_call(
+          "load_dictionary",
           dictionary_type = category,
           source = source,
           api_key = api_key
@@ -116,7 +118,8 @@ run_lbd <- function(search_query, a_term,
 
   # Step 4: Extract entities using the combined dictionary
   message("Step 4: Extracting biomedical entities...")
-  entities <- LBDiscover::extract_entities(
+  entities <- .lbdiscover_call(
+    "extract_entities",
     preprocessed_data,
     text_column = "abstract",
     dictionary = combined_dict
@@ -162,7 +165,7 @@ run_lbd <- function(search_query, a_term,
   if ("lsi" %in% discovery_approaches) {
     message("Applying LSI model...")
     # Create term-document matrix for LSI
-    tdm <- LBDiscover::create_term_document_matrix(preprocessed_data)
+    tdm <- .lbdiscover_call("create_term_document_matrix", preprocessed_data)
 
     results$lsi <- lsi_model(
       tdm,
