@@ -62,7 +62,9 @@ entities <- data.frame(
 
 # Validate entities
 validated <- valid_entities(entities, "migraine", c("migrain", "headache"))
-#> Error in valid_entities(entities, "migraine", c("migrain", "headache")): could not find function "valid_entities"
+#> Filtered from 4 to 2 validated entities
 print(validated)
-#> Error: object 'validated' not found
+#>     entity entity_type
+#> 1 migraine     disease
+#> 2 receptor     protein
 ```

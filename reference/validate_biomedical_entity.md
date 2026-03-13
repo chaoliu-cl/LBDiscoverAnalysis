@@ -21,3 +21,11 @@ validate_biomedical_entity(term, claimed_type)
 ## Value
 
 Logical indicating if the term is validated
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LBDiscoverAnalysis:::validate_biomedical_entity("sumatriptan", "drug")
+} # }
+```

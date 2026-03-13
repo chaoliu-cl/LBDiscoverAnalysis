@@ -36,3 +36,21 @@ create_report(
 ## Value
 
 The file path of the created HTML report (invisibly).
+
+## Examples
+
+``` r
+results <- list(
+  abc = data.frame(
+    a_term = "migraine",
+    b_term = "serotonin",
+    c_term = "cgrp",
+    abc_score = 0.42,
+    stringsAsFactors = FALSE
+  )
+)
+out_file <- tempfile(fileext = ".html")
+create_report(results, output_file = out_file)
+file.exists(out_file)
+#> [1] TRUE
+```

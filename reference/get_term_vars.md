@@ -41,7 +41,6 @@ articles <- data.frame(
 
 # Get term variations
 variations <- get_term_vars(articles, "migrain")
-#> Error in get_term_vars(articles, "migrain"): could not find function "get_term_vars"
 print(variations)
-#> Error: object 'variations' not found
+#> [1] "Migraine"  "Migraines"
 ```

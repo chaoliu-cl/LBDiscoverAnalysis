@@ -21,3 +21,11 @@ query_external_api(term, claimed_type)
 ## Value
 
 Logical indicating if the term was found in the appropriate database
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LBDiscoverAnalysis:::query_external_api("sumatriptan", "drug")
+} # }
+```

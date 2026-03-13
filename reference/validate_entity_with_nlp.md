@@ -26,3 +26,11 @@ validate_entity_with_nlp(term, claimed_type, nlp_model = NULL)
 ## Value
 
 Logical indicating if the term is likely of the claimed type
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LBDiscoverAnalysis:::validate_entity_with_nlp("EGFR receptor", "protein")
+} # }
+```

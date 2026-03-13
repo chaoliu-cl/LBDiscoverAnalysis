@@ -26,3 +26,17 @@ enhance_abc_kb(abc_results, knowledge_base = c("umls", "mesh"), api_key = NULL)
 ## Value
 
 A data frame with enhanced ABC results.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+abc_results <- data.frame(
+  a_term = "migraine",
+  b_terms = "serotonin, cgrp",
+  c_term = "sumatriptan",
+  stringsAsFactors = FALSE
+)
+enhance_abc_kb(abc_results, knowledge_base = "mesh")
+} # }
+```

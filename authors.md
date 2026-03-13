@@ -10,13 +10,13 @@
 Source:
 [`DESCRIPTION`](https://github.com/chaoliu-cl/LBDiscover/blob/main/DESCRIPTION)
 
-Chao Liu (2026). *LBDiscoverAnalysis: Co-occurrence Discovery Models and
+Liu C (2026). *LBDiscoverAnalysis: Co-occurrence Discovery Models and
 Visualization for Biomedical LBD*. R package version 0.1.0.9000,
 <https://github.com/chaoliu-cl/LBDiscover>.
 
     @Manual{,
       title = {LBDiscoverAnalysis: Co-occurrence Discovery Models and Visualization for Biomedical LBD},
-      author = {{Chao Liu}},
+      author = {Chao Liu},
       year = {2026},
       note = {R package version 0.1.0.9000},
       url = {https://github.com/chaoliu-cl/LBDiscover},

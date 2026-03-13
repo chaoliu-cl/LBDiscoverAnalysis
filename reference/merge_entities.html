@@ -107,9 +107,15 @@ where one or both might be empty, and removes duplicates.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Merge entities</span></span></span>
 <span class="r-in"><span><span class="va">merged</span> <span class="op">&lt;-</span> <span class="fu">merge_entities</span><span class="op">(</span><span class="va">custom_entities</span>, <span class="va">standard_entities</span>, <span class="st">"migraine"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in merge_entities(custom_entities, standard_entities, "migraine"):</span> could not find function "merge_entities"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Combined 3 custom entities with 3 standard entities.</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">merged</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'merged' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   doc_id    entity entity_type start_pos end_pos sentence frequency</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      1  migraine     disease         1       8    sent1         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2      1  headache     symptom        10      18    sent1         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3      2      pain     symptom         5       9    sent2         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4      1 serotonin    chemical        20      29    sent1         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5      2  migraine     disease         1       8    sent2         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6      2   therapy   treatment        15      22    sent2         1</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

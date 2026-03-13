@@ -39,3 +39,16 @@ validate_entity_comprehensive(
 ## Value
 
 Logical indicating if the term is validated
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LBDiscoverAnalysis:::validate_entity_comprehensive(
+  "migraine",
+  "disease",
+  use_nlp = FALSE,
+  use_external_api = FALSE
+)
+} # }
+```

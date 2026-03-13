@@ -67,7 +67,13 @@ standard_entities <- data.frame(
 
 # Merge entities
 merged <- merge_entities(custom_entities, standard_entities, "migraine")
-#> Error in merge_entities(custom_entities, standard_entities, "migraine"): could not find function "merge_entities"
+#> Combined 3 custom entities with 3 standard entities.
 print(merged)
-#> Error: object 'merged' not found
+#>   doc_id    entity entity_type start_pos end_pos sentence frequency
+#> 1      1  migraine     disease         1       8    sent1         2
+#> 2      1  headache     symptom        10      18    sent1         1
+#> 3      2      pain     symptom         5       9    sent2         1
+#> 4      1 serotonin    chemical        20      29    sent1         1
+#> 5      2  migraine     disease         1       8    sent2         1
+#> 6      2   therapy   treatment        15      22    sent2         1
 ```

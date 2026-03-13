@@ -1,5 +1,6 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>/404.html</loc></url>
+<url><loc>/CONTRIBUTING.html</loc></url>
 <url><loc>/articles/index.html</loc></url>
 <url><loc>/articles/migraine_example.html</loc></url>
 <url><loc>/authors.html</loc></url>
@@ -43,6 +44,7 @@
 <url><loc>/reference/has_general_biomedical_characteristics.html</loc></url>
 <url><loc>/reference/index.html</loc></url>
 <url><loc>/reference/is_valid_biomedical_entity.html</loc></url>
+<url><loc>/reference/lbdiscover_compat.html</loc></url>
 <url><loc>/reference/list_to_df.html</loc></url>
 <url><loc>/reference/load_results.html</loc></url>
 <url><loc>/reference/lsi_model.html</loc></url>

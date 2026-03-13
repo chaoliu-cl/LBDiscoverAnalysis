@@ -71,3 +71,29 @@ lsi_model(
 ## Value
 
 A data frame with ranked discovery results.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+tdm <- matrix(
+  c(
+    3, 1, 0, 2,
+    1, 2, 1, 0,
+    0, 1, 3, 2,
+    2, 0, 1, 3
+  ),
+  nrow = 4,
+  byrow = TRUE
+)
+rownames(tdm) <- c("migraine", "serotonin", "cgrp", "sumatriptan")
+lsi_model(
+  tdm,
+  a_term = "migraine",
+  n_factors = 2,
+  n_results = 3,
+  validation_function = function(term, claimed_type) TRUE,
+  use_nlp = FALSE
+)
+} # }
+```
