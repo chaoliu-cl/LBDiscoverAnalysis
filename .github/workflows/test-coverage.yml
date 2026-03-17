@@ -30,7 +30,7 @@ jobs:
             type = "tests",
             line_exclusions = list(
               "tests/testthat/test-alternative-models.R",
-              "tests/testthat/test-core-utils-and-reporting.R",
+              "tests/testthat/test-core-utils-and-reporting.R"
             ),
             quiet = FALSE,
             clean = FALSE,
