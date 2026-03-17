@@ -97,9 +97,9 @@ results <- data.frame(
 # These require graphics capabilities
 plot_heatmap(results, output_file = tempfile(fileext = ".png"))
 #> Warning: Entity types not found in results. Setting show_entity_types = FALSE
-#> Created heatmap visualization: /tmp/RtmpYTNarT/file1c911288b0d4.png 
+#> Created heatmap visualization: /tmp/RtmpRVX8N4/file1cb120adbe3.png 
 plot_network(results, output_file = tempfile(fileext = ".png"))
 #> Warning: Entity types not found in results. Setting show_entity_types = FALSE
-#> Created network visualization: /tmp/RtmpYTNarT/file1c9143090fde.png 
+#> Created network visualization: /tmp/RtmpRVX8N4/file1cb1643910dc.png 
 # }
 ```
