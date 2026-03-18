@@ -16,12 +16,8 @@ jobs:
       - uses: actions/checkout@main
       - uses: codecov/codecov-action@v5
         with:
-          fail_ci_if_error: true # optional (default = false)
-          files: ./coverage1.xml,./coverage2.xml # optional
-          flags: unittests # optional
-          name: codecov-umbrella # optional
           token: ${{ secrets.CODECOV_TOKEN }}
-          verbose: true # optional (default = false)
+
       - uses: actions/checkout@v3
 
       - uses: r-lib/actions/setup-r@v2
