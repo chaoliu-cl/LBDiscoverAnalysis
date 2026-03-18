@@ -57,6 +57,6 @@ results_list <- list(
 # Generate report to temporary file
 temp_file <- tempfile(fileext = ".html")
 gen_report(results_list, output_file = temp_file)
-#> Generated comprehensive report: /tmp/RtmpLAiTyA/file1c6b7a21e979.html 
+#> Generated comprehensive report: /tmp/RtmpAzoIpe/file1ca35019f4e8.html 
 # }
 ```
