@@ -1,5 +1,9 @@
 # LBDiscoverAnalysis
 
+<!-- badges: start -->
+[![Codecov test coverage](https://codecov.io/gh/chaoliu-cl/LBDiscoverAnalysis/graph/badge.svg)](https://app.codecov.io/gh/chaoliu-cl/LBDiscoverAnalysis)
+<!-- badges: end -->
+
 `LBDiscoverAnalysis` contains the analysis-facing components of the original
 `LBDiscover` workflow.
 
