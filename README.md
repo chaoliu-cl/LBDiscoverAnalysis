@@ -2,6 +2,7 @@
 
 <!-- badges: start -->
 [![Codecov test coverage](https://codecov.io/gh/chaoliu-cl/LBDiscoverAnalysis/graph/badge.svg)](https://app.codecov.io/gh/chaoliu-cl/LBDiscoverAnalysis)
+[![R-CMD-check](https://github.com/chaoliu-cl/LBDiscoverAnalysis/actions/workflows/r.yml/badge.svg)](https://github.com/chaoliu-cl/LBDiscoverAnalysis/actions/workflows/r.yml)
 <!-- badges: end -->
 
 `LBDiscoverAnalysis` contains the analysis-facing components of the original
